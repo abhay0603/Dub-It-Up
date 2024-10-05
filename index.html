@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dub It Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <!-- Horizontal Navigation Bar -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="logo.png" alt="Dub It Up Logo" class="logo">
+            <h1 class="company-name">Dub It Up</h1>
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="Search..." class="search-bar">
+            <button class="auth-button" onclick="login()">Login</button>
+            <button class="auth-button" onclick="signup()">Sign Up</button>
+        </div>
+    </header>
+
+    <!-- Vertical Navigation Bar -->
+    <nav class="vertical-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Upload</a></li>
+            <li><a href="#">Dubbing</a></li>
+            <li><a href="#">Download</a></li>
+            <li>
+                <button class="theme-toggle-button" onclick="toggleTheme()">Dark/Light</button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <div class="video-container">
+            <video id="demo-video" controls>
+                <source id="video-source" src="demo.mp4" type="video/mp4">
+                <track id="subtitle-track-english" src="english.vtt" kind="subtitles" srclang="en" label="English" default>
+                <track id="subtitle-track-hindi" src="hindi.vtt" kind="subtitles" srclang="hi" label="Hindi">
+                <track id="subtitle-track-tamil" src="tamil.vtt" kind="subtitles" srclang="ta" label="Tamil">
+                Your browser does not support the video tag.
+            </video>
+            
+            <audio id="background-audio" autoplay loop>
+                <source id="audio-source" src="assets/demo_english.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+            <div class="video-controls">
+                <button class="video-button" onclick="playPause()">Play/Pause</button>
+                <button class="video-button" onclick="changeAudio('english')">English</button>
+                <button class="video-button" onclick="changeAudio('hindi')">Hindi</button>
+                <button class="video-button" onclick="changeAudio('tamil')">Tamil</button>
+                <button class="video-button" onclick="increaseVolume()">Volume +</button>
+                <button class="video-button" onclick="decreaseVolume()">Volume -</button>
+            </div>
+        </div>
+        <button class="more-videos-btn" onclick="moreVideos()">More Videos</button>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
